@@ -1,0 +1,18 @@
+from Crypto.Cipher import XOR
+ 
+def XOR_cipher(str, key):
+	cipher = XOR.new(key)
+	encrypted_text = cipher.encrypt(str)
+	return (encrypted_text)
+	
+def XOR_uncipher(str,key):
+	cipher = XOR.new(key)
+	decrypted_text = cipher.decrypt(XOR_cipher(str, key))
+	print (decrypted_text)
+
+str=input("Enter string to be encrypted: ")
+key=input("Enter cipher key: ")
+
+print(XOR_cipher(str, key))
+
+XOR_uncipher(str, key)
